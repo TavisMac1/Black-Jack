@@ -17,6 +17,11 @@
 		4503238027E8E3B100F21D1B /* BlackJackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503237F27E8E3B100F21D1B /* BlackJackTests.swift */; };
 		4503238A27E8E3B100F21D1B /* BlackJackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503238927E8E3B100F21D1B /* BlackJackUITests.swift */; };
 		4503238C27E8E3B100F21D1B /* BlackJackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503238B27E8E3B100F21D1B /* BlackJackUITestsLaunchTests.swift */; };
+		4503239927E8FB0700F21D1B /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503239827E8FB0700F21D1B /* MainScreen.swift */; };
+		4503239B27E8FB1D00F21D1B /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503239A27E8FB1D00F21D1B /* GameScreen.swift */; };
+		4503239D27E8FB2C00F21D1B /* CreditsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503239C27E8FB2C00F21D1B /* CreditsScreen.swift */; };
+		450323A427E912CA00F21D1B /* Stats+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450323A227E912CA00F21D1B /* Stats+CoreDataClass.swift */; };
+		450323A527E912CA00F21D1B /* Stats+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450323A327E912CA00F21D1B /* Stats+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		4503238527E8E3B100F21D1B /* BlackJackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackJackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4503238927E8E3B100F21D1B /* BlackJackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackUITests.swift; sourceTree = "<group>"; };
 		4503238B27E8E3B100F21D1B /* BlackJackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4503239827E8FB0700F21D1B /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		4503239A27E8FB1D00F21D1B /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
+		4503239C27E8FB2C00F21D1B /* CreditsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsScreen.swift; sourceTree = "<group>"; };
+		450323A227E912CA00F21D1B /* Stats+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stats+CoreDataClass.swift"; sourceTree = "<group>"; };
+		450323A327E912CA00F21D1B /* Stats+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stats+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,8 @@
 		4503235927E8E3B000F21D1B = {
 			isa = PBXGroup;
 			children = (
+				450323A227E912CA00F21D1B /* Stats+CoreDataClass.swift */,
+				450323A327E912CA00F21D1B /* Stats+CoreDataProperties.swift */,
 				4503236427E8E3B000F21D1B /* BlackJack */,
 				4503237E27E8E3B100F21D1B /* BlackJackTests */,
 				4503238827E8E3B100F21D1B /* BlackJackUITests */,
@@ -109,6 +121,9 @@
 				4503237327E8E3B100F21D1B /* LaunchScreen.storyboard */,
 				4503237627E8E3B100F21D1B /* Info.plist */,
 				4503236E27E8E3B000F21D1B /* BlackJack.xcdatamodeld */,
+				4503239827E8FB0700F21D1B /* MainScreen.swift */,
+				4503239A27E8FB1D00F21D1B /* GameScreen.swift */,
+				4503239C27E8FB2C00F21D1B /* CreditsScreen.swift */,
 			);
 			path = BlackJack;
 			sourceTree = "<group>";
@@ -262,9 +277,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4503237027E8E3B000F21D1B /* BlackJack.xcdatamodeld in Sources */,
+				4503239D27E8FB2C00F21D1B /* CreditsScreen.swift in Sources */,
+				4503239B27E8FB1D00F21D1B /* GameScreen.swift in Sources */,
 				4503236A27E8E3B000F21D1B /* ViewController.swift in Sources */,
+				4503239927E8FB0700F21D1B /* MainScreen.swift in Sources */,
 				4503236627E8E3B000F21D1B /* AppDelegate.swift in Sources */,
+				450323A527E912CA00F21D1B /* Stats+CoreDataProperties.swift in Sources */,
 				4503236827E8E3B000F21D1B /* SceneDelegate.swift in Sources */,
+				450323A427E912CA00F21D1B /* Stats+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
