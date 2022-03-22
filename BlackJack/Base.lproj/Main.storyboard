@@ -31,14 +31,126 @@
                     <view key="view" contentMode="scaleToFill" id="QUq-mx-3QR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="NRm-KQ-sQz">
+                                <rect key="frame" x="0.0" y="128" width="116" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="aZf-7U-Rct">
+                                <rect key="frame" x="124" y="128" width="116" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dealer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pO-7f-lGA">
+                                <rect key="frame" x="20" y="99" width="116" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3k-gE-ZMg">
+                                <rect key="frame" x="248" y="433" width="116" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Hit"/>
+                                <connections>
+                                    <action selector="HItBtn:" destination="uXc-H3-ZXc" eventType="touchUpInside" id="fqC-q3-M3j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dealer Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyR-Pf-Jdi">
+                                <rect key="frame" x="268" y="128" width="126" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jh-TS-6af">
+                                <rect key="frame" x="248" y="481" width="116" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Stay"/>
+                                <connections>
+                                    <action selector="StayClick:" destination="uXc-H3-ZXc" eventType="touchUpInside" id="CJg-VF-5eb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q73-9x-KPf">
+                                <rect key="frame" x="20" y="399" width="163" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKF-eL-l5x">
+                                <rect key="frame" x="0.0" y="428" width="240" height="385"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="7hw-Tf-XN6">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="161"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="eH2-VK-004">
+                                        <rect key="frame" x="124" y="0.0" width="116" height="161"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPg-vJ-CRY">
+                                        <rect key="frame" x="0.0" y="169" width="116" height="161"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xZC-Mt-yiE">
+                                        <rect key="frame" x="124" y="169" width="116" height="161"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="yF1-2B-7wQ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="MJG-iW-iZZ"/>
+                            </scrollView>
+                            <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LF3-X6-DQp">
+                                <rect key="frame" x="0.0" y="0.0" width="418" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x04-JV-gnx">
+                                    <rect key="frame" x="0.0" y="0.0" width="418" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5T-N8-SDv">
+                                            <rect key="frame" x="96" y="396" width="227" height="104"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="Play">
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                                <color key="baseBackgroundColor" name="AccentColor"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="StartGame:" destination="uXc-H3-ZXc" eventType="touchUpInside" id="98V-H9-kvZ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="l5T-N8-SDv" firstAttribute="centerX" secondItem="x04-JV-gnx" secondAttribute="centerX" id="KIV-tS-tLC"/>
+                                        <constraint firstItem="l5T-N8-SDv" firstAttribute="centerY" secondItem="x04-JV-gnx" secondAttribute="centerY" id="dCf-Fu-fTB"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="HxV-ez-sgh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" image="gamecontroller.fill" catalog="system" id="OXm-zt-Mfz"/>
+                    <connections>
+                        <outlet property="Blur" destination="LF3-X6-DQp" id="Dvm-jZ-1Lw"/>
+                        <outlet property="DealerCard1" destination="NRm-KQ-sQz" id="vR0-Ss-o4l"/>
+                        <outlet property="DealerCard2" destination="aZf-7U-Rct" id="zvx-db-uQ0"/>
+                        <outlet property="HitBtn" destination="X3k-gE-ZMg" id="yAQ-M3-e0I"/>
+                        <outlet property="PlayBtn" destination="l5T-N8-SDv" id="n6p-c2-JIz"/>
+                        <outlet property="PlayerCard1" destination="7hw-Tf-XN6" id="Mqd-RO-tH2"/>
+                        <outlet property="PlayerCard2" destination="eH2-VK-004" id="ULA-tk-Bg9"/>
+                        <outlet property="PlayerCard3" destination="JPg-vJ-CRY" id="nRc-9Q-Qgb"/>
+                        <outlet property="PlayerCard4" destination="xZC-Mt-yiE" id="JbR-3T-WZh"/>
+                        <outlet property="PlayerScoreLbl" destination="Q73-9x-KPf" id="2m0-QM-IlQ"/>
+                        <outlet property="StayBtn" destination="0Jh-TS-6af" id="swt-48-95h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cja-My-94d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="92" y="377"/>
+            <point key="canvasLocation" x="91.304347826086968" y="376.33928571428572"/>
         </scene>
         <!--Home-->
         <scene sceneID="QTi-6Z-S1Q">
@@ -135,10 +247,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cardBack" width="338" height="489"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="gamecontroller.fill" catalog="system" width="128" height="80"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
