@@ -14,10 +14,6 @@ class GameScreen: UIViewController {
     @IBOutlet weak var DealerScoreLbl: UILabel!
     //make the num arrays for cards
     var playerArr = [1, 2, 3, 4, 5, 6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51, 52].shuffled() //shuffle to randomize
-    var playerCard1 = 0 //make the cards and give them default value
-    var playerCard2 = 0
-    var dealerCard1 = 0
-    var dealerCard2 = 0
     var playerScore = 0
     var dealerScore = 0
     var gameStarted = false
@@ -46,6 +42,10 @@ class GameScreen: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func StartGame(_ sender: UIButton) {
+        playerScore = 0
+        dealerScore = 0
+        counter1 = 1
+        counter2 = 2
         gameStarted = true
         PlayBtn.isHidden = true
         Blur.isHidden = true
@@ -61,26 +61,26 @@ class GameScreen: UIViewController {
                 DealPlayerCard1(deal1: playerArr[pNextCard1], dealName: PlayerCard3)
                 counter1 += 1
                 counter2 += 1
-                print("card 1 and 2 played")
                 firstHit = false
+                PlayerCard3.isHidden = false
             }
             if (hitCounter == 1 && !bust) {
                 let pNextCard2 = playerArr.index(after: counter2)
                 DealPlayerCard1(deal1: playerArr[pNextCard2], dealName: PlayerCard4)
                 counter1 += 1
-                print("card three played")
+                PlayerCard4.isHidden = false
             }
             if (hitCounter == 2 && !bust) {
                 let pNextCard3 = playerArr.index(after: counter1)
                 DealPlayerCard1(deal1: playerArr[pNextCard3], dealName: PlayerCard5)
                 counter1 += 1
-                print("card four played")
+                PlayerCard5.isHidden = false
             }
             if (hitCounter == 3 && !bust) {
                 let pNextCard4 = playerArr.index(after: counter1)
                 DealPlayerCard1(deal1: playerArr[pNextCard4], dealName: PlayerCard6)
                 counter1 += 1
-                print("card five played")
+                PlayerCard6.isHidden = false
             }
             hitCounter += 1
         }
@@ -90,7 +90,11 @@ class GameScreen: UIViewController {
         switch deal1 {
         case 1:
                 dealName.image = UIImage(named: "club_1")
-                playerScore += 1
+                if (playerScore >= 11) {
+                    playerScore += 1
+                } else {
+                    playerScore += 11
+                }
         case 2:
                 dealName.image = UIImage(named: "club_2")
                 playerScore += 2
@@ -129,7 +133,11 @@ class GameScreen: UIViewController {
                 playerScore += 10
         case 14:
                 dealName.image = UIImage(named: "diamond_1")
-                playerScore += 1
+                if (playerScore >= 11) {
+                    playerScore += 1
+                } else {
+                    playerScore += 11
+                }
         case 15:
                 dealName.image = UIImage(named: "diamond_2")
                 playerScore += 2
@@ -168,7 +176,11 @@ class GameScreen: UIViewController {
                 playerScore += 10
         case 27:
                 dealName.image = UIImage(named: "heart_1")
-                playerScore += 1
+                if (playerScore >= 11) {
+                    playerScore += 1
+                } else {
+                    playerScore += 11
+                }
         case 28:
                 dealName.image = UIImage(named: "heart_2")
                 playerScore += 2
@@ -207,7 +219,11 @@ class GameScreen: UIViewController {
                 playerScore += 10
         case 40:
                 dealName.image = UIImage(named: "spade_1")
-                playerScore += 1
+                if (playerScore >= 11) {
+                    playerScore += 1
+                } else {
+                    playerScore += 11
+                }
         case 41:
                 dealName.image = UIImage(named: "spade_2")
                 playerScore += 2
@@ -244,22 +260,38 @@ class GameScreen: UIViewController {
         case 52:
                 dealName.image = UIImage(named: "spade_jack")
                 playerScore += 10
-            
         default:
             PlayerCard1.image = UIImage(named: "cardBack")
         }
-        
-        PlayerScoreLbl.text = "Your score is \(playerScore)"
+        if (dealName == PlayerCard3) {//check card to make visible
+            PlayerCard3.isHidden = false
+            print("card 3 in")
+        } else if (dealName == PlayerCard4) {
+            PlayerCard4.isHidden = false
+            print("card 4 in")
+        } else if (dealName == PlayerCard5) {
+            PlayerCard5.isHidden = false
+            print("card 4 in")
+        } else if (dealName == PlayerCard6) {
+            PlayerCard6.isHidden = false
+            print("card 4 in")
+        }
+        PlayerScoreLbl.text = "Your score is \(chips)"
         if (playerScore > 21) {
             WinnerLbl.text = "Bust, you lose"
             chips -= 50
+            AlertPresent()
         }
     }
     func DealPlayerCard2(deal1: Int, dealName: UIImageView) {
         switch deal1 {
         case 1:
                 dealName.image = UIImage(named: "club_1")
+            if (dealerScore >= 11) {
                 dealerScore += 1
+            } else {
+                dealerScore += 11
+            }
         case 2:
                 dealName.image = UIImage(named: "club_2")
                 dealerScore += 2
@@ -298,7 +330,11 @@ class GameScreen: UIViewController {
                 dealerScore += 10
         case 14:
                 dealName.image = UIImage(named: "diamond_1")
+            if (dealerScore >= 11) {
                 dealerScore += 1
+            } else {
+                dealerScore += 11
+            }
         case 15:
                 dealName.image = UIImage(named: "diamond_2")
                 dealerScore += 2
@@ -337,7 +373,11 @@ class GameScreen: UIViewController {
                 dealerScore += 10
         case 27:
                 dealName.image = UIImage(named: "heart_1")
+            if (dealerScore >= 11) {
                 dealerScore += 1
+            } else {
+                dealerScore += 11
+            }
         case 28:
                 dealName.image = UIImage(named: "heart_2")
                 dealerScore += 2
@@ -376,7 +416,11 @@ class GameScreen: UIViewController {
                 dealerScore += 10
         case 40:
                 dealName.image = UIImage(named: "spade_1")
+            if (dealerScore >= 11) {
                 dealerScore += 1
+            } else {
+                dealerScore += 11
+            }
         case 41:
                 dealName.image = UIImage(named: "spade_2")
                 dealerScore += 2
@@ -413,14 +457,24 @@ class GameScreen: UIViewController {
         case 52:
                 dealName.image = UIImage(named: "spade_jack")
                 dealerScore += 10
-            
         default:
             DealerCard1.image = UIImage(named: "cardBack")
         }
-        
-        DealerScoreLbl.text = "Score: \(dealerScore)"
+        if (dealName == DealerCard3) {//check card to make visible
+            DealerCard3.isHidden = false
+            print("card 3 in")
+        } else if (dealName == DealerCard4) {
+            DealerCard4.isHidden = false
+            print("card 4 in")
+        } else if (dealName == DealerCard5) {
+            DealerCard5.isHidden = false
+            print("card 4 in")
+        } else if (dealName == DealerCard6) {
+            DealerCard6.isHidden = false
+            print("card 4 in")
+        }
         if (dealerScore > 21) {
-            DealerScoreLbl.text = "Bust, game over"
+            WinnerLbl.text = "Bust, game over"
         }
     }
     
@@ -441,13 +495,45 @@ class GameScreen: UIViewController {
             if (dealerScore > 21) {
                 WinnerLbl.text = "You win!"
                 chips += 50
+                PlayerScoreLbl.text = "Your score is \(chips)"
+                AlertPresent()
                 break
             } else if (dealerScore >= playerScore && dealerScore < 22) {
                 WinnerLbl.text = "Dealer wins"
                 chips -= 50
+                PlayerScoreLbl.text = "Your score is \(chips)"
+                AlertPresent()
                 break
             }
-            
         }
+    }
+    func AlertPresent() {
+        let alert = UIAlertController(title: WinnerLbl.text, message: nil,         preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: { _ in self.ResetGame()}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func ResetGame() {
+        HitBtn.isHidden = false
+        DealerCard1.image = UIImage(named: "cardBack")
+        DealerCard2.image = UIImage(named: "cardBack")
+        PlayerCard1.image = UIImage(named: "cardBack")
+        PlayerCard2.image = UIImage(named: "cardBack")
+        PlayerCard3.isHidden = true
+        PlayerCard4.isHidden = true
+        PlayerCard5.isHidden = true
+        PlayerCard6.isHidden = true
+        DealerCard3.isHidden = true
+        DealerCard4.isHidden = true
+        DealerCard5.isHidden = true
+        DealerCard6.isHidden = true
+        PlayBtn.isHidden = false
+        Blur.isHidden = false
+        playerScore = 0
+        dealerScore = 0
+        hitCounter = 0
+        firstHit = true
+        bust = false
+        playerArr = [1, 2, 3, 4, 5, 6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51, 52].shuffled()
     }
 }
