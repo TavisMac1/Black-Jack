@@ -38,10 +38,20 @@ class GameScreen: UIViewController {
     @IBOutlet weak var StayBtn: UIButton!
     @IBOutlet weak var HitBtn: UIButton!
     @IBOutlet weak var WinnerLbl: UILabel!
+    @IBOutlet weak var PlayerName: UILabel!
+    let core = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
+        WinnerLbl.isHidden = true
     }
     @IBAction func StartGame(_ sender: UIButton) {
+        do { //get data
+            let firstText = try core.fetch(Stats.fetchRequest()).last
+            let getINS = firstText!.user_name
+            PlayerName.text = getINS
+        } catch {
+            print("there was an error retrieving player name")
+        }
         playerScore = 0
         dealerScore = 0
         counter1 = 1
@@ -51,8 +61,8 @@ class GameScreen: UIViewController {
         Blur.isHidden = true
         DealPlayerCard2(deal1: playerArr[0], dealName: DealerCard1)
         DealPlayerCard2(deal1: playerArr[1], dealName: DealerCard2)
-        DealPlayerCard1(deal1: playerArr[0], dealName: PlayerCard1)
-        DealPlayerCard1(deal1: playerArr[1], dealName: PlayerCard2)
+        DealPlayerCard1(deal1: playerArr[2], dealName: PlayerCard1)
+        DealPlayerCard1(deal1: playerArr[3], dealName: PlayerCard2)
     }
     @IBAction func HItBtn(_ sender: UIButton) {
         if (gameStarted) {
@@ -265,16 +275,12 @@ class GameScreen: UIViewController {
         }
         if (dealName == PlayerCard3) {//check card to make visible
             PlayerCard3.isHidden = false
-            print("card 3 in")
         } else if (dealName == PlayerCard4) {
             PlayerCard4.isHidden = false
-            print("card 4 in")
         } else if (dealName == PlayerCard5) {
             PlayerCard5.isHidden = false
-            print("card 4 in")
         } else if (dealName == PlayerCard6) {
             PlayerCard6.isHidden = false
-            print("card 4 in")
         }
         PlayerScoreLbl.text = "Your score is \(chips)"
         if (playerScore > 21) {
@@ -462,16 +468,12 @@ class GameScreen: UIViewController {
         }
         if (dealName == DealerCard3) {//check card to make visible
             DealerCard3.isHidden = false
-            print("card 3 in")
         } else if (dealName == DealerCard4) {
             DealerCard4.isHidden = false
-            print("card 4 in")
         } else if (dealName == DealerCard5) {
             DealerCard5.isHidden = false
-            print("card 4 in")
         } else if (dealName == DealerCard6) {
             DealerCard6.isHidden = false
-            print("card 4 in")
         }
         if (dealerScore > 21) {
             WinnerLbl.text = "Bust, game over"
@@ -491,7 +493,6 @@ class GameScreen: UIViewController {
             DealPlayerCard2(deal1: playerArr[pNextCard1], dealName: cardIndex[x] ?? DealerCard1)
             x += 1
             counter1 += 1
-            dealerScore += 1
             if (dealerScore > 21) {
                 WinnerLbl.text = "You win!"
                 chips += 50
@@ -508,7 +509,7 @@ class GameScreen: UIViewController {
         }
     }
     func AlertPresent() {
-        let alert = UIAlertController(title: WinnerLbl.text, message: nil,         preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: WinnerLbl.text, message: nil, preferredStyle: UIAlertController.Style.alert)
 
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: { _ in self.ResetGame()}))
         self.present(alert, animated: true, completion: nil)
